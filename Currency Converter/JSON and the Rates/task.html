@@ -1,0 +1,16 @@
+<html><body><h5 id="description">Description</h5>
+<p>In the previous stages, we worked with different real-world currencies but the exchange rates were fixed. Unfortunately (or not, depending on your political stance), we don't really have fixed exchange rates in today's world. At this stage, you will have to work with the Internet to get the information! The <a href="http://www.floatrates.com/json-feeds.html" rel="noopener noreferrer nofollow" target="_blank">FloatRates</a> site contains a special JSON page for each currency. Your task is to make requests to these pages and download the actual data on the exchange rates of the US dollar and the euro. Remember, that the data is stored in JSON format.</p>
+<h5 id="objectives">Objectives</h5>
+<p>There are many currency codes, for example, RUB, ARS, HNL, AUD, MAD, etc. Your task is to return the information about the exchange rates from the site specified above for a given currency and USD and EUR.</p>
+<ol>
+<li>Take the currency code as the user input.</li>
+<li>Make a request to <code class="language-python"><a href="http://www.floatrates.com/daily/YOUR_CURRENCY_CODE.json" rel="noopener noreferrer nofollow" target="_blank">http://www.floatrates.com/daily/<strong>YOUR_CURRENCY_CODE</strong>.json</a></code>. Don't forget to replace <code class="language-python"><a href="http://www.floatrates.com/daily/YOUR_CURRENCY_CODE.json" rel="noopener noreferrer nofollow" target="_blank"><strong>YOUR_CURRENCY_CODE</strong></a></code> in the link with your currency and put the code in lowercase.</li>
+<li>Print your result for USD and EUR.</li>
+</ol>
+<h5 id="example">Example</h5>
+<p>The greater-than symbol followed by a space (<code class="language-python">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+<p></p><div class="alert alert-primary">Be aware that the dictionary elements are unordered. The results of your output may differ, as the service updates the data once in twelve hours. Don't hesitate to print the whole string for your own interest, but it is not a part of the stage.</div><p></p>
+<p>The output for HNL:</p>
+<pre><code class="language-python">&gt; HNL
+{'code': 'USD', 'alphaCode': 'USD', 'numericCode': '840', 'name': 'U.S. Dollar', 'rate': 0.040212252288502, 'date': 'Sun, 5 Jul 2020 12:00:01 GMT', 'inverseRate': 24.868042526579}
+{'code': 'EUR', 'alphaCode': 'EUR', 'numericCode': '978', 'name': 'Euro', 'rate': 0.035775653590882, 'date': 'Sun, 5 Jul 2020 12:00:01 GMT', 'inverseRate': 27.951970114527}</code></pre></body></html>

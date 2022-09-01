@@ -1,0 +1,64 @@
+<html><body><h5 id="description">Description</h5>
+<p>Now your program knows how to get up-to-date rates. Let's make it more interactive! In this stage, you need to read from the input the currency you have, the currency you want to exchange your money for, and the amount of money you want to exchange. Mind that the input number can have a fractional part!</p>
+<p>Keep in mind that the currency you have stays the same, you read it only once in the beginning, then you only need to read the currency you want to exchange your money for and the amount of money since they change. If you come across an empty input, the options for exchange are over.</p>
+<p>In product development, the performance is key. Let's use a simple way to speed up the program, called <strong>caching</strong><em>. </em>What if you need to do the math for the same exchange target several times? Isn't it better to save rates at runtime, instead of wasting resources on retrieving the same data from the Internet? If you already did calculations for this exchange target before, you know the rate, so there is no need to connect to the Internet, you only need to refer to the data in cache. You can organize the cache anyway you like, but the easiest way would be to use (as you probably already did in stage 5) a dictionary with currencies as keys and rates as values.</p>
+<h5 id="objectives">Objectives</h5>
+<p>Let's go over the steps one more time:</p>
+<ol>
+<li>Take the first input – the currency that you have. It is default for all the calculations.</li>
+<li>Retrieve the data from <a href="http://www.floatrates.com/json-feeds.html" rel="noopener noreferrer nofollow" target="_blank">FloatRates</a> as before.</li>
+<li>Save the exchange rates for USD and EUR (these are the most popular ones, so it's good to have rates for them in advance).</li>
+<li>Take the second input – the currency code that you want to exchange money for, and the third input – amount of money you have.</li>
+<li>Check the cache. Maybe you already have what you need?</li>
+<li>If you have the currency in your cache, calculate the result.</li>
+<li>If not, get it from the site, and calculate the result.</li>
+<li>Save the rate to your cache.</li>
+<li>Print the result.</li>
+<li>Repeat steps 4-9 until there is no currency left to process. </li>
+</ol>
+<h5 id="examples">Examples</h5>
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+<p><strong>Example 1</strong>:</p>
+<pre><code class="language-no-highlight">&gt; ILS
+&gt; USD
+&gt; 45
+Checking the cache...
+Oh! It is in the cache!
+You received 13.84 USD.
+&gt; RSD
+&gt; 57
+Checking the cache...
+Sorry, but it is not in the cache!
+You received 1684.41 RSD.
+&gt; EUR
+&gt; 33
+Checking the cache...
+Oh! It is in the cache!
+You received 8.38 EUR.</code></pre>
+<p><strong>Example 2</strong>:</p>
+<pre><code class="language-no-highlight">&gt; USD
+&gt; EUR
+&gt; 20
+Checking the cache...
+Oh! It is in the cache!
+You received 16.52 EUR.
+&gt; NOK
+&gt; 45
+Checking the cache...
+Sorry, but it is not in the cache!
+You received 382.1 NOK.
+&gt; SEK
+&gt; 75
+Checking the cache...
+Sorry, but it is not in the cache!
+You received 624.66 SEK.
+&gt; NOK
+&gt; 55
+Checking the cache...
+Oh! It is in the cache!
+You received 467.02 NOK.
+&gt; ISK
+&gt; 91
+Checking the cache...
+Sorry, but it is not in the cache!
+You received 11708.38 ISK.</code></pre></body></html>
